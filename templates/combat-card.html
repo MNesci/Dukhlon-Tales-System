@@ -1,0 +1,25 @@
+<section class="combatCardChatContainer">
+    <section class="combatCardChatTitleContainer">
+        <h4 class="combatCardChatName">{{item.name}}</h4>
+        <span class="combatCardTempoCost">{{item.data.tempoCost}}</span>
+    </section>
+    <p class="combatCardChatTraits">{{item.data.traits}}</p>
+    <pre class="combatCardChatDescription">{{item.data.description}}</pre>
+    {{#if item.data.outcomes.GE}}
+        <section class="combatCardChatOutcomeContainer">
+            <p class="combatCardChatOutcome">{{item.data.outcomes.ME}}</p>
+            <p class="combatCardChatOutcome">{{item.data.outcomes.GE}}</p>
+            <p class="combatCardChatOutcome">{{item.data.outcomes.SE}}</p>
+            <p class="combatCardChatOutcome">{{item.data.outcomes.LE}}</p>
+            <p class="combatCardChatOutcome">{{item.data.outcomes.NE}}</p>
+        </section>
+    {{/if}}
+    {{#unless (eq item.data.keyword "")}}
+        <section class="combatCardChatKeywordContainer">
+            <p class="combatCardChatKeyword">{{item.data.keyword}}</p>
+        </section>
+    {{/unless}}
+    {{#if item.data.roll}}
+        <p class="combatCardChatRoll" data-roll={{item.data.roll}} data-actorId={{actor._id}} data-xValue={{xValue}}>Roll {{item.data.roll}}</p>
+    {{/if}}
+</section>

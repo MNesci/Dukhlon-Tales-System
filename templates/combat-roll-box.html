@@ -1,0 +1,18 @@
+<form class="rollBox" data-sender={{actorName}} data-card={{cardPlayed}} data-formula={{rollFormula}}>
+    <h1 class="combatRollHeading">{{heading}}</h1>
+    <section class="advantageAndDisadvantageSection">
+        <fieldset class="advantageAndDisadvantageCountingContainer">
+            <label for="advantageInput">Advantages</label>
+            <input id="advantageInput" type="number" min="0">
+        </fieldset>
+        <fieldset class="advantageAndDisadvantageCountingContainer">
+            <label for="disadvantageInput">Disadvantages</label>
+            <input id="disadvantageInput" type="number" min="0">
+        </fieldset>
+    </section>
+    <section class="rollButtonContainer">
+        <button class="publicRollButton">Public Roll</button>
+        <button class="gmRollButton">GM Roll</button>
+        <button class="secretRollButton">Secret Roll</button>
+    </section>
+</form>

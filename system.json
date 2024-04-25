@@ -1,0 +1,26 @@
+{
+  "name": "worldbuilding",
+  "title": "Simple World-Building",
+  "description": "Dukhlyn Tales game system for Foundry VTT.",
+  "version": "101.1",
+  "minimumCoreVersion": "0.8.9",
+  "compatibleCoreVersion": "9",
+  "author": "Mike",
+  "scripts": ["scripts/script.js"],
+  "styles": ["styles/style.css"],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "gridDistance": 1,
+  "gridUnits": "m",
+  "primaryTokenAttribute": "resolve",
+  "secondaryTokenAttribute": "tempo",
+  "url": "",
+  "manifest": "",
+  "download": "",
+  "license": "LICENSE.txt"
+}

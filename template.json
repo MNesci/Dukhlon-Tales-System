@@ -1,0 +1,262 @@
+{
+  "Actor": {
+    "types": ["character"],
+    "character": {
+      "biography": "",
+      "resolve": {
+        "value": 30,
+        "min": 0,
+        "max": 30
+      },
+      "shield": {
+        "value": 10,
+        "min": 0,
+        "max": 10
+      },
+      "tempo": {
+        "value": 4,
+        "min": 0,
+        "max": 4
+      },
+      "defences": {
+        "reflex": {
+          "value": 9
+        },
+        "fortitude": {
+          "value": 9
+        },
+        "will": {
+          "value": 9
+        }
+      },
+      "lockOrUnlock": "Locked",
+      "kin": {
+        "value": ""
+      },
+      "credits": {
+        "value": 0
+      },
+      "networth": {
+        "value": 0
+      },
+      "background": {
+        "value": ""
+      },
+      "languages": {
+        "value": ""
+      },
+      "beliefs": {
+        "beliefOne": {
+          "value": ""
+        },
+        "beliefTwo": {
+          "value": ""
+        },
+        "beliefThree": {
+          "value": ""
+        }
+      },
+      "ambitions": {
+        "ambitionOne": {
+          "value": ""
+        },
+        "ambitionTwo": {
+          "value": ""
+        },
+        "ambitionThree": {
+          "value": ""
+        }
+      },
+      "skills": {
+        "acrobatics": {
+          "value": 2,
+          "dc": 6
+        },
+        "athletics": {
+          "value": 2,
+          "dc": 6
+        },
+        "augmenting": {
+          "value": 2,
+          "dc": 6
+        },
+        "coercion": {
+          "value": 2,
+          "dc": 6
+        },
+        "controlling": {
+          "value": 2,
+          "dc": 6
+        },
+        "culture": {
+          "value": 2,
+          "dc": 6
+        },
+        "diplomacy": {
+          "value": 2,
+          "dc": 6
+        },
+        "engineering": {
+          "value": 2,
+          "dc": 6
+        },
+        "finesse": {
+          "value": 2,
+          "dc": 6
+        },
+        "force": {
+          "value": 2,
+          "dc": 6
+        },
+        "intuition": {
+          "value": 2,
+          "dc": 6
+        },
+        "invoking": {
+          "value": 2,
+          "dc": 6
+        },
+        "operating": {
+          "value": 2,
+          "dc": 6
+        },
+        "perception": {
+          "value": 2,
+          "dc": 6
+        },
+        "piloting": {
+          "value": 2,
+          "dc": 6
+        },
+        "programming": {
+          "value": 2,
+          "dc": 6
+        },
+        "sensing": {
+          "value": 2,
+          "dc": 6
+        },
+        "stealth": {
+          "value": 2,
+          "dc": 6
+        }
+      },
+      "equipment": {
+        "weaponOne": {
+          "name": "",
+          "load": 0
+        },
+        "weaponTwo": {
+          "name": "",
+          "load": 0
+        },
+        "gearOne": {
+          "name": "",
+          "load": 0
+        },
+        "gearTwo": {
+          "name": "",
+          "load": 0
+        },
+        "gearThree": {
+          "name": "",
+          "load": 0
+        },
+        "gearFour": {
+          "name": "",
+          "load": 0
+        },
+        "gearFive": {
+          "name": "",
+          "load": 0
+        },
+        "gearSix": {
+          "name": "",
+          "load": 0
+        },
+        "gearSeven": {
+          "name": "",
+          "load": 0
+        },
+        "gearEight": {
+          "name": "",
+          "load": 0
+        }
+      },
+      "deckCount": {
+        "value": "0"
+      }
+    }
+  },
+  "Item": {
+    "types": ["card", "feature", "globalAction", "weapon", "specialGear"],
+    "card": {
+      "name": "",
+      "tempoCost": 0,
+      "traits": "",
+      "description": "",
+      "outcomes": {
+        "ME": null,
+        "GE": null,
+        "SE": null,
+        "LE": null,
+        "NE": null
+      },
+      "keyword": "",
+      "inCombatDeck": false,
+      "currentLocation": "deck",
+      "roll": null,
+      "tags": null
+    },
+    "feature": {
+      "name": "",
+      "tempoCost": 0,
+      "traits": "",
+      "description": "",
+      "outcomes": {
+        "ME": null,
+        "GE": null,
+        "SE": null,
+        "LE": null,
+        "NE": null
+      }
+    },
+    "globalAction": {
+      "name": "",
+      "tempoCost": 0,
+      "traits": "",
+      "description": "",
+      "outcomes": {
+        "ME": null,
+        "GE": null,
+        "SE": null,
+        "LE": null,
+        "NE": null
+      },
+      "roll": null
+    },
+    "weapon": {
+      "name": "",
+      "description": "",
+      "classification": "",
+      "range": "",
+      "idealRange": "",
+      "handedness": "",
+      "load": 0,
+      "properties": "",
+      "attributes": {},
+      "groups": {},
+      "conditions": {
+        "equipped": "unequipped",
+        "disarmed": 0
+      },
+      "tags": null
+    },
+    "specialGear": {
+      "name": "",
+      "description": "",
+      "load": 0,
+      "cost": 0
+    }
+  }
+}

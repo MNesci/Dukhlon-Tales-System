@@ -1,0 +1,17 @@
+<section class="featureChatContainer">
+    <section class="featureChatTitleContainer">
+        <h4 class="featureChatName">{{item.name}}</h4>
+        <span class="featureChatTempoCost">{{item.data.tempoCost}}</span>
+    </section>
+    <p class="featureChatTraits">{{item.data.traits}}</p>
+    <pre class="featureChatDescription">{{item.data.description}}</pre>
+    {{#if item.data.outcomes.GE}}
+        <section class="featureChatOutcomeContainer">
+            <p class="featureChatOutcome">{{item.data.outcomes.ME}}</p>
+            <p class="featureChatOutcome">{{item.data.outcomes.GE}}</p>
+            <p class="featureChatOutcome">{{item.data.outcomes.SE}}</p>
+            <p class="featureChatOutcome">{{item.data.outcomes.LE}}</p>
+            <p class="featureChatOutcome">{{item.data.outcomes.NE}}</p>
+        </section>
+    {{/if}}
+</section>

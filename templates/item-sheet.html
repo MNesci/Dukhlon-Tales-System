@@ -1,0 +1,93 @@
+<form class="flexcol {{cssClass}}" autocomplete="off">
+
+    {{!-- Sheet Header --}}
+    <header class="sheetHeader">
+        <h1 class="charName">
+            <input name="name" type="text" value="{{data.name}}" placeholder="Name" />
+        </h1>
+    </header>
+    <section class="itemContentSection">
+
+        {{#unless (or
+            (eq data.type "weapon")
+            (eq data.type "specialGear")
+        )}}
+            <label for="tempoCost">Tempo Cost</label>
+            <input id="tempoCost" name="data.tempoCost" value="{{systemData.tempoCost}}">
+            <label for="traits">Traits</label>
+            <input id="traits" class="featureTraits" name="data.traits" value="{{systemData.traits}}">
+            <label for="description">Description</label>
+            <textarea id="description" class="featureDescription" name="data.description">{{systemData.description}}</textarea>
+            <section class="outcomesSection">
+                <section class="individualOutcomeSection">
+                    <label for="outcomeME">ME</label>
+                    <input id="outcomeME" class="featureOutcome" name="data.outcomes.ME" value="{{systemData.outcomes.ME}}">
+                </section>
+                <section class="individualOutcomeSection">
+                    <label for="outcomeGE">GE</label>
+                    <input id="outcomeGE" class="featureOutcome" name="data.outcomes.GE" value="{{systemData.outcomes.GE}}">
+                </section>
+                <section class="individualOutcomeSection">
+                    <label for="outcomeSE">SE</label>
+                    <input id="outcomeSE" class="featureOutcome" name="data.outcomes.SE" value="{{systemData.outcomes.SE}}">
+                </section>
+                <section class="individualOutcomeSection">
+                    <label for="outcomeLE">LE</label>
+                    <input id="outcomeLE" class="featureOutcome" name="data.outcomes.LE" value="{{systemData.outcomes.LE}}">
+                </section>
+                <section class="individualOutcomeSection">
+                    <label for="outcomeNE">NE</label>
+                    <input id="outcomeNE" class="featureOutcome" name="data.outcomes.NE" value="{{systemData.outcomes.NE}}">
+                </section>
+            </section>
+        {{/unless}}
+
+        {{#if (eq data.type "card")}}
+            <label for="keyword">Keyword</label>
+            <input id="keyword" class="cardKeyword" name="data.keyword" value="{{systemData.keyword}}">
+        {{/if}}
+
+        {{#if (or
+            (eq data.type "card")
+            (eq data.type "globalAction")
+        )}}
+            <label for="roll">Roll</label>
+            <input id="roll" class="featureRoll" name="data.roll" value="{{systemData.roll}}">
+        {{/if}}
+
+        {{#if (eq data.type "weapon")}}
+            <label for="weaponName">Weapon</label>
+            <input id="weaponName" class="weaponInfo" name="data.name" value="{{systemData.name}}">
+            <label for="weaponClassification">Classification</label>
+            <input id="weaponClassification" class="weaponInfo" name="data.classification" value="{{systemData.classification}}">
+            <label for="weaponRange">Range</label>
+            <input id="weaponRange" class="weaponInfo" name="data.range" value="{{systemData.range}}">
+            <label for="weaponIdealRange">Ideal Range</label>
+            <input id="weaponIdealRange" class="weaponInfo" name="data.idealRange" value="{{systemData.idealRange}}">
+            <label for="weaponHandedness">Handedness</label>
+            <input id="weaponHandedness" class="weaponInfo" name="data.handedness" value="{{systemData.handedness}}">
+            <label for="weaponLoad">Load</label>
+            <input id="weaponLoad" class="weaponInfo" name="data.load" value="{{systemData.load}}">
+            <label for="weaponProperties">Properties</label>
+            <input id="weaponProperties" class="weaponInfo" name="data.properties" value="{{systemData.properties}}">
+        {{/if}}
+
+        {{#if (eq data.type "specialGear")}}
+            <label for="specialGearName">Special Gear</label>
+            <input id="specialGearName" name="data.name" value="{{systemData.name}}">
+            <label for="specialGear">Load</label>
+            <input id="specialGear" name="data.load" value="{{systemData.load}}">
+            <label for="specialGearCost">Cost</label>
+            <input id="specialGearCost" name="data.cost" value="{{systemData.cost}}">
+            <label for="specialGearDescription">Description</label>
+            <input id="specialGearDescription" name="data.description" value="{{systemData.description}}">
+        {{/if}}
+
+        {{#if (eq data.type "card")}}
+            <section class="cardTagsSection">
+                <label for="cardTags">Tags</label>
+                <input id="cardTags" class="cardTags" name="data.tags" value="{{systemData.tags}}">
+            </section>
+        {{/if}}
+    </section>
+</form>

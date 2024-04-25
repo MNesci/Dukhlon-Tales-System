@@ -1,0 +1,692 @@
+/*
+Sheet Header
+*/
+
+.sheetHeader {
+    display: flex;
+    gap: 10px;
+}
+
+.profileImg {
+    height: 140px;
+    width: 140px;
+}
+
+.headerFields {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+header h1 input {
+    height: 100% !important;
+}
+
+.resourcesSection {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.resource {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.defencesSection {
+    display: flex;
+    gap: 10px;
+}
+
+.defense {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+
+
+/*
+Description
+*/
+
+.kabSection {
+    display: flex;
+    flex-direction: column;
+}
+
+.kinAndBackgroundSection,
+.creditsAndNetworthSection {
+    display: flex;
+}
+
+.kinSection,
+.backgroundSection,
+.creditsSection,
+.networthSection {
+    width: 50%;
+}
+
+.creationInfoSection label {
+    width: 150px;
+}
+
+.kinSection,
+.creditsSection,
+.languagesSection,
+.backgroundSection,
+.networthSection {
+    display: flex;
+    align-items: center;
+}
+
+.creationInfoSection h2,
+.bioSection h2 {
+    margin-top: 20px;
+}
+
+.individualConvictionSection {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.bioSection textarea {
+    min-width: 570px;
+    min-height: 200px;
+    margin: auto;
+}
+
+/*
+Sheet Equipment
+*/
+
+.loadSection {
+    display: flex;
+    align-items: center;
+}
+
+.loadSection fieldset {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-right: 5px;
+    margin-right: 5px;
+    border: none;
+}
+
+#maxLoadDisplay {
+    width: 30px;
+    font-size: 20px;
+}
+
+.weaponsSection,
+.specialGearSection,
+.declaredGearSection {
+    display: flex;
+    flex-direction: column;
+}
+
+.weaponsHeader,
+.specialGearHeader {
+    display: flex;
+}
+
+.weaponsHeader *,
+.individualWeaponSection *,
+.specialGearHeader *,
+.individualSpecialGearSection * {
+    padding-left: 2px;
+    padding-right: 2px;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin: 0;
+    text-align: center;
+    border: 1px solid black;
+}
+
+.weaponsHeader * {
+    height: 20px;
+}
+
+.weaponNameHeader {
+    width: 80px;
+}
+
+.weaponClassificationHeader {
+    width: 50px;
+}
+
+.weaponRangeHeader {
+    width: 80px;
+}
+
+.weaponHandednessHeader {
+    width: 85px;
+}
+
+.weaponLoadHeader {
+    width: 40px;
+}
+
+.weaponPropertiesHeader {
+    width: 165px;
+}
+
+.individualWeaponSection {
+    display: flex;
+}
+
+.weaponNameDisplay {
+    width: 80px;
+}
+
+.weaponClassificationDisplay {
+    width: 50px;
+}
+
+.weaponRangeDisplay {
+    width: 80px;
+}
+
+.weaponHandednessDisplay {
+    width: 85px;
+}
+
+.individualWeaponSection .weaponLoadInput {
+    width: 40px;
+}
+
+.weaponPropertiesDisplay {
+    width: 165px;
+}
+
+.weaponDeleteButton {
+    border: 1px solid red;
+    margin-left: 1px;
+}
+
+.weaponDeleteButton:hover {
+    background-color: red;
+}
+
+.individualSpecialGearSection {
+    display: flex;
+}
+
+.specialGearNameHeader,
+.specialGearNameDisplay {
+    width: 100px;
+}
+
+.specialGearLoadHeader,
+.specialGearLoadDisplay,
+.specialGearCostHeader,
+.specialGearCostDisplay {
+    width: 50px;
+}
+
+.specialGearDescriptionHeader,
+.specialGearDescriptionDisplay {
+    width: 300px;
+}
+
+.specialGearDeleteButton {
+    border: 1px solid red;
+    margin-left: 1px;
+}
+
+.specialGearDeleteButton:hover {
+    background-color: red;
+}
+
+
+.commonGearSection h3 {
+    margin-top: 10px;
+}
+
+.individualGearSection {
+    display: flex;
+    gap: 5px;
+}
+
+
+/*
+Sheet Repertoire
+*/
+
+.repertoireHeaderSection {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.deckCountText {
+    width: 150px;
+}
+
+.sendDecklistToChatButton {
+    width: 300px;
+}
+
+.repertoireCardSection {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.repertoireIndividualCardSection {
+    padding: 1px 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    border: 1px solid black;
+}
+
+.cardNameSection {
+    display: flex;
+    gap: 10px;
+}
+
+.inCombatDeckName {
+    color: darkgreen;
+}
+
+.notInCombatDeckName {
+    color: darkred;
+}
+
+.cardOutcomesSection {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.repertoireCardControlsSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.repertoireToggleInDeckButton,
+.repertoireDeleteCardButton {
+    border-radius: 5px;
+    margin: 0;
+}
+
+.inCombatDeckButton {
+    border: 1px solid darkgreen;
+}
+
+.inCombatDeckButton:hover {
+    background-color: lightgreen;
+}
+
+.notInCombatDeckButton {
+    border: 1px solid darkred;
+}
+
+.notInCombatDeckButton:hover {
+    background-color: pink;
+}
+
+.repertoireDeleteCardButton {
+    border: 1px solid red;
+}
+
+.repertoireDeleteCardButton:hover {
+    background-color: red;
+}
+
+
+/*
+Combat Deck Section
+*/
+
+.combatDeckCardSection {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.combatDeckIndividualCardSection {
+    padding-left: 5px;
+    padding-right: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    border: 1px solid black;
+}
+
+.combatDeckCardContentSection {
+    width: 100%;
+}
+
+.combatDeckCardControlsSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.combatDeckCardLocation {
+    margin-top: 2px;
+    margin-bottom: 0;
+    text-transform: capitalize;
+}
+
+
+/*
+Sheet Skills and Hand
+*/
+
+.skillsAndHandSection {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.sideSection {
+    width: 40%;
+}
+
+.skillSection {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}   
+
+.individualSkillSection {
+    margin: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 160px;
+}
+
+.individualSkillSection label {
+    width: 80px;
+}
+
+.skillRoll {
+    margin: 0;
+}
+
+.skillRoll:hover {
+    border-bottom: 1px solid blue;
+    color: blue;
+}
+
+.individualSkillSection input {
+    width: 30px
+}
+
+
+/*
+Hand Weapons Section
+*/
+
+.handIndividualWeaponsSection {
+    margin-bottom: 2px;
+    border: 1px solid black;
+    padding: 2px;
+}
+
+.equippedWeapon {
+    border: 1px solid darkgreen;
+}
+
+.equippedWeapon:hover {
+    background-color: lightgreen;
+}
+
+.unequippedWeapon {
+    border: 1px solid darkred;
+}
+
+.unequippedWeapon:hover {
+    background-color: pink;
+}
+
+.increaseDisarmed,
+.decreaseDisarmed {
+    padding-left: 2px;
+    padding-right: 2px;
+    border: 1px solid black;
+}
+
+.increaseDisarmed:hover,
+.decreaseDisarmed:hover {
+    background-color: lightblue;
+}
+
+
+/*
+Hand Section
+*/
+
+
+
+.handControlsSection {
+    display: flex;
+    gap: 5px;
+}
+
+.handCardSection {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.handIndividualCardSection {
+    padding-left: 1px;
+    margin-top: 1px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid black;
+    width: 375px;
+}
+
+.handCardContentSection {
+    width: 85%;
+}
+
+.cardNameSection {
+    font-size: 18px;
+}
+
+.hideCardDetail {
+    display: none;
+    visibility: hidden;
+}
+
+.handCardControlsSection {
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+}
+
+.handPlayCardButton {
+    font-size: 20px;
+    border: 1px solid blue;
+}
+
+.handPlayCardButton:hover {
+    background-color: lightblue;
+}
+
+.handDiscardCardButton {
+    border: 1px solid gray;
+}
+
+.handDiscardButton:hover {
+    background-color: lightslategrey;
+}
+
+.globalActionDeleteCardButton {
+    border: 1px solid red;
+}
+
+.globalActionDeleteCardButton:hover {
+    background-color: red;
+}
+
+.handSubsequentHeading {
+    margin-top: 10px;
+}
+
+
+
+/*
+Skill Roll Box
+*/
+
+.advantageAndDisadvantageSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.advantageAndDisadvantageCountingContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.rollButtonContainer {
+    display: flex;
+}
+
+
+/*
+Item Sheet Features
+*/
+
+.itemContentSection {
+    display: flex;
+    flex-direction: column;
+}
+
+.featureTraits {
+    width: 100%;
+}
+
+.featureDescription {
+    min-width: 300px;
+    min-height: 200px;
+}
+
+.outcomesSection {
+    display: flex;
+    flex-direction: column;
+}
+
+.individualOutcomeSection {
+    display: flex;
+}
+
+
+
+/*
+Chat Features
+*/
+
+.featureChatContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.featureChatTitleContainer {
+    display: flex;
+    gap: 5px;
+}
+
+.featureChatContainer *,
+.featureChatOutcome {
+    margin: 0;
+}
+
+.featureChatName {
+    font-weight: 700;
+}
+
+.featureChatOutcomeContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.featureChatOutcome {
+    border-top: 1px solid black;
+    padding-top: 2px;
+}
+
+
+/*
+Chat Cards
+*/
+
+.combatCardChatContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.combatCardChatTitleContainer {
+    display: flex;
+    gap: 5px;
+}
+
+.combatCardChatContainer *,
+.featureChatOutcome {
+    margin: 0;
+}
+
+.combatCardChatName {
+    font-weight: 700;
+}
+
+.combatCardChatOutcomeContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.combatCardChatOutcome {
+    border-top: 1px solid black;
+    padding-top: 2px;
+}
+
+.combatCardChatRoll {
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.combatCardChatRoll:hover {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+
+/*
+All Pre
+*/
+
+pre {
+    white-space: pre-wrap;
+}

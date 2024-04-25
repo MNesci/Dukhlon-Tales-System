@@ -1,0 +1,582 @@
+<form class="flexcol {{cssClass}}" autocomplete="off">
+
+    {{!-- Sheet Header --}}
+    <header class="sheetHeader">
+        <img class="profileImg" src="{{data.img}}" data-edit="img" title="{{data.name}}"/>
+        <div class="headerFields">
+            <h1 class="charName">
+                <input name="name" type="text" value="{{data.name}}" placeholder="Name" />
+            </h1>
+            <div class="resourcesSection">
+                <div class="resource">
+                    <label for="currentResolve">Resolve</label>
+                    <input id="currentResolve" type="number" name="data.resolve.value" value="{{systemData.resolve.value}}"/>
+                    <span> / </span>
+                    <input type="number" name="data.resolve.max" value="{{systemData.resolve.max}}"/>
+                </div>
+                <div class="resource">
+                    <label for="currentShield">Shield</label>
+                    <input id="currentShield" type="number" name="data.shield.value" value="{{systemData.shield.value}}"/>
+                    <span> / </span>
+                    <input type="number" name="data.shield.max" value="{{systemData.shield.max}}"/>
+                </div>
+                <div class="resource">
+                    <label for="currentTempo">Tempo</label>
+                    <input id="currentTempo" type="number" name="data.tempo.value" value="{{systemData.tempo.value}}"/>
+                    <span> / </span>
+                    <input type="number" name="data.tempo.max" value="{{systemData.tempo.max}}"/>
+                </div>
+            </div>
+            <div class="defencesSection">
+                <div class="defense">
+                    <label>Reflex</label>
+                    <input type="number" name="data.defences.reflex.value" value="{{systemData.defences.reflex.value}}"/>
+                </div>
+                <div class="defense">
+                    <label>Fortitude</label>
+                    <input type="number" name="data.defences.fortitude.value" value="{{systemData.defences.fortitude.value}}"/>
+                </div>
+                <div class="defense">
+                    <label>Will</label>
+                    <input type="number" name="data.defences.will.value" value="{{systemData.defences.will.value}}"/>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    {{!-- Sheet Tab Navigation --}}
+    <nav class="sheet-tabs tabs" data-group="primary">
+        <a class="item" data-tab="description">Description</a>
+        <a class="item" data-tab="items">Items</a>
+        <a class="item" data-tab="repertoire">Repertoire</a>
+        <a class="item" data-tab="combatDeck">Combat Deck</a>
+        <a class="item" data-tab="hand">Hand</a>
+        <input type="button" class="toggleLockButton" value="{{systemData.lockOrUnlock}}">
+    </nav>
+
+    {{!-- Sheet Body --}}
+    <section class="sheet-body">
+
+        {{!-- Biography Tab --}}
+        <section class="tab description" data-group="primary" data-tab="description">
+            <section class="creationInfoSection">
+                <section class="kabSection">
+                    <section class="kinAndBackgroundSection">
+                        <fieldset class="kinSection">
+                            <label for="kinInput">Kin</label>
+                            <input id="kinInput" type="text" name="data.kin.value" value="{{systemData.kin.value}}">
+                        </fieldset>
+                        <fieldset class="backgroundSection">
+                            <label for="backgroundInput">Background</label>
+                            <input id="backgroundInput" type="text" name="data.background.value" value="{{systemData.background.value}}">
+                        </fieldset>
+                    </section>
+                    <section class="creditsAndNetworthSection">
+                        <fieldset class="creditsSection">
+                            <label for="creditsInput">Credits</label>
+                            <input id="creditsInput" type="text" name="data.credits.value" value="{{systemData.credits.value}}">
+                        </fieldset>
+                        <fieldset class="networthSection">
+                            <label for="networthInput">Networth</label>
+                            <input id="networthInput" type="text" name="data.networth.value" value="{{systemData.networth.value}}">
+                        </fieldset>
+                    </section>
+                    <fieldset class="languagesSection">
+                        <label for="languagesInput">Languages</label>
+                        <input id="languagesInput" type="text" name="data.languages.value" value="{{systemData.languages.value}}">
+                    </fieldset>
+                </section>
+                <section class="convictionsSection">
+                    <h2>Convictions</h2>
+                    <fieldset class="individualConvictionSection">
+                        <label for="beliefOne">Belief:</label>
+                        <input id="beliefOne" type="text" name="data.beliefs.beliefOne.value" value="{{systemData.beliefs.beliefOne.value}}">
+                    </fieldset>
+                    <fieldset class="individualConvictionSection">
+                        <label for="beliefTwo">Belief:</label>
+                        <input id="beliefTwo" type="text" name="data.beliefs.beliefTwo.value" value="{{systemData.beliefs.beliefTwo.value}}">
+                    </fieldset>
+                    <fieldset class="individualConvictionSection">
+                        <label for="beliefThree">Belief:</label>
+                        <input id="beliefThree" type="text" name="data.beliefs.beliefThree" value="{{systemData.beliefs.beliefThree}}">
+                    </fieldset>
+                    <fieldset class="individualConvictionSection">
+                        <label for="ambitionOne">Ambition:</label>
+                        <input id="ambitionOne" type="text" name="data.ambitions.ambitionOne.value" value="{{systemData.ambitions.ambitionOne.value}}">
+                    </fieldset>
+                    <fieldset class="individualConvictionSection">
+                        <label for="ambitionTwo">Ambition:</label>
+                        <input id="ambitionTwo" type="text" name="data.ambitions.ambitionTwo" value="{{systemData.ambitions.ambitionTwo}}">
+                    </fieldset>
+                    <fieldset class="individualConvictionSection">
+                        <label for="ambitionThree">Ambition:</label>
+                        <input id="ambitionThree" type="text" name="data.ambitions.ambitionThree.value" value="{{systemData.ambitions.ambitionThree.value}}">
+                    </fieldset>
+                </section>
+            </section>
+            <section class="bioSection">
+                <h2>Bio</h2>
+                <textarea name="data.biography">{{systemData.biography}}</textarea>
+            </section>
+        </section>
+
+        {{!-- Owned Items Tab --}}
+        <section class="tab items" data-group="primary" data-tab="items">
+            <section class="loadSection">
+                <fieldset>
+                    <span>Current Load:</span>
+                    <fieldset class="currentLoadDisplay">0</fieldset>
+                </fieldset>
+            </section>
+            <fieldset class="weaponsSection">
+                <h3>Weapons</h3>
+                <section class="weaponsHeader">
+                    <p class="weaponNameHeader">Weapon</p>
+                    <p class="weaponClassificationHeader">Class</p>
+                    <p class="weaponRangeHeader">Range</p>
+                    <p class="weaponHandednessHeader">Handedness</p>
+                    <p class="weaponLoadHeader">Load</p>
+                    <p class="weaponPropertiesHeader">Properties</p>
+                </section>
+                    {{#each items}}
+                        {{#if (eq this.type "weapon")}}
+                            <section data-id={{this._id}} class="individualWeaponSection">
+                                <p class="weaponNameDisplay">{{this.data.name}}</p>
+                                <p class="weaponClassificationDisplay">{{this.data.classification}}</p>
+                                <p class="weaponRangeDisplay">{{this.data.range}} ({{this.data.idealRange}})</p>
+                                <p class="weaponHandednessDisplay">{{this.data.handedness}}</p>
+                                <fieldset class="weaponLoadInput">{{this.data.load}}</fieldset>
+                                <p class="weaponPropertiesDisplay">{{this.data.properties}}</p>
+                                {{#if (eq ../systemData.lockOrUnlock 'Unlocked')}}
+                                    <input type="button" value="Delete" class="weaponDeleteButton deleteButton">
+                                {{/if}}
+                            </section>
+                        {{/if}}
+                    {{/each}}
+            </fieldset>
+            <fieldset class="specialGearSection">
+                <h3>Special Gear Available</h3>
+                <section class="specialGearHeader">
+                    <p class="specialGearNameHeader">Special Gear</p>
+                    <p class="specialGearLoadHeader">Load</p>
+                    <p class="specialGearCostHeader">Cost</p>
+                    <p class="specialGearDescriptionHeader">Description</p>
+                </section>
+                    {{#each items}}
+                        {{#if (eq this.type "specialGear")}}
+                            <section data-id={{this._id}} class="individualSpecialGearSection">
+                                <p class="specialGearNameDisplay">{{this.data.name}}</p>
+                                <p class="specialGearLoadDisplay">{{this.data.load}}</p>
+                                <p class="specialGearCostDisplay">{{this.data.cost}}</p>
+                                <p class="specialGearDescriptionDisplay">{{this.data.description}}</p>
+                                {{#if (eq ../systemData.lockOrUnlock 'Unlocked')}}
+                                    <input type="button" value="Delete" class="specialGearDeleteButton deleteButton">
+                                {{/if}}
+                            </section>
+                        {{/if}}
+                    {{/each}}
+            </fieldset>
+            <section class="declaredGearSection">
+                <h3>Declared Gear</h3>
+                <fieldset class="individualGearSection">
+                    <input type="text" name="data.equipment.gearOne.name" value="{{systemData.equipment.gearOne.name}}">
+                    <input class="loadInput" type="number" name="data.equipment.gearOne.load" value="{{systemData.equipment.gearOne.load}}">
+                </fieldset>
+                <fieldset class="individualGearSection">
+                    <input type="text" name="data.equipment.gearTwo.name" value="{{systemData.equipment.gearTwo.name}}">
+                    <input class="loadInput" type="number" name="data.equipment.gearTwo.load" value="{{systemData.equipment.gearTwo.load}}">
+                </fieldset>
+                <fieldset class="individualGearSection">
+                    <input type="text" name="data.equipment.gearThree.name" value="{{systemData.equipment.gearThree.name}}">
+                    <input class="loadInput" type="number" name="data.equipment.gearThree.load" value="{{systemData.equipment.gearThree.load}}">
+                </fieldset>
+                <fieldset class="individualGearSection">
+                    <input type="text" name="data.equipment.gearFour.name" value="{{systemData.equipment.gearFour.name}}">
+                    <input class="loadInput" type="number" name="data.equipment.gearFour.load" value="{{systemData.equipment.gearFour.load}}">
+                </fieldset>
+                <fieldset class="individualGearSection">
+                    <input type="text" name="data.equipment.gearFive.name" value="{{systemData.equipment.gearFive.name}}">
+                    <input class="loadInput" type="number" name="data.equipment.gearFive.load" value="{{systemData.equipment.gearFive.load}}">
+                </fieldset>
+                <fieldset class="individualGearSection">
+                    <input type="text" name="data.equipment.gearSix.name" value="{{systemData.equipment.gearSix.name}}">
+                    <input class="loadInput" type="number" name="data.equipment.gearSix.load" value="{{systemData.equipment.gearSix.load}}">
+                </fieldset>
+                <fieldset class="individualGearSection">
+                    <input type="text" name="data.equipment.gearSeven.name" value="{{systemData.equipment.gearSeven.name}}">
+                    <input class="loadInput" type="number" name="data.equipment.gearSeven.load" value="{{systemData.equipment.gearSeven.load}}">
+                </fieldset>
+                <fieldset class="individualGearSection">
+                    <input type="text" name="data.equipment.gearEight.name" value="{{systemData.equipment.gearEight.name}}">
+                    <input class="loadInput" type="number" name="data.equipment.gearEight.load" value="{{systemData.equipment.gearEight.load}}">
+                </fieldset>
+            </section>
+        </section>
+
+        {{!-- Repertoire Tab --}}
+        <section class="tab description" data-group="primary" data-tab="repertoire">
+            <h2>Repertoire</h2>
+            <section class="repertoireCardSection">
+                <section class="repertoireHeaderSection">
+                    <span class="deckCountText">Deck Count: <span class="currentDeckCount">{{systemData.deckCount.value}}</span> / 45</span>
+                    <button class="sendDecklistToChatButton">Send decklist to chat</button>
+                    {{#if (eq systemData.lockOrUnlock 'Unlocked')}}
+                        <button class="deleteRepertoireButton">Delete Repertoire</button>
+                    {{/if}}
+                </section>
+                {{#each (sortItemsByName items)}}
+                    {{#if (eq this.type "card")}}
+                        <section class="repertoireIndividualCardSection">
+                            <section class="repertoireCardContentSection">
+                                {{#if this.data.inCombatDeck}}
+                                    <section class="cardNameSection inCombatDeckName">
+                                        <span>{{this.name}}</span>
+                                        <span>{{this.data.tempoCost}}</span>
+                                    </section>
+                                {{/if}}
+                                {{#unless this.data.inCombatDeck}}
+                                    <section class="cardNameSection notInCombatDeckName">
+                                        <span>{{this.name}}</span>
+                                        <span>{{this.data.tempoCost}}</span>
+                                    </section>
+                                {{/unless}}
+                                <section class="cardDetailSection hideCardDetail">
+                                    <section class="cardTraitsSection">
+                                        <span>{{this.data.traits}}</span>
+                                    </section>
+                                    <section class="cardBodySection">
+                                        <pre>{{this.data.description}}</pre>
+                                        {{#unless (eq this.data.outcomes.GE null)}}
+                                            <section class="cardOutcomesSection">
+                                                <span>{{this.data.outcomes.ME}}</span>
+                                                <span>{{this.data.outcomes.GE}}</span>
+                                                <span>{{this.data.outcomes.SE}}</span>
+                                                <span>{{this.data.outcomes.LE}}</span>
+                                                <span>{{this.data.outcomes.NE}}</span>
+                                            </section>
+                                        {{/unless}}
+                                        {{#unless (eq this.data.keyword "")}}
+                                            <span>{{this.data.keyword}}</span>
+                                        {{/unless}}
+                                    </section>
+                                </section>
+                            </section>
+                            <section data-id={{this._id}} class="repertoireCardControlsSection">
+                                {{#if this.data.inCombatDeck}}
+                                    <input type="button" class="repertoireToggleInDeckButton inCombatDeckButton" value="Toggle In Combat Deck">
+                                {{/if}}
+                                {{#unless this.data.inCombatDeck}}
+                                    <input type="button" class="repertoireToggleInDeckButton notInCombatDeckButton" value="Toggle In Combat Deck">
+                                {{/unless}}
+                                {{#if (eq ../systemData.lockOrUnlock 'Unlocked')}}
+                                    <input type="button" class="repertoireDeleteCardButton deleteButton" value="Delete">
+                                {{/if}}
+                            </section>
+                        </section>
+                    {{/if}}
+                {{/each}}
+            </section>
+        </section>
+
+        {{!-- Combat Deck Tab --}}
+        <section class="tab description" data-group="primary" data-tab="combatDeck">
+            <h2>Combat Deck</h2>
+            <section class="combatDeckCardSection">
+                {{#each (sortItemsByName items)}}
+                    {{#if this.data.inCombatDeck}}
+                        <section class="combatDeckIndividualCardSection">
+                            <section class="combatDeckCardContentSection">
+                                <section class="cardNameSection">
+                                    <span>{{this.name}}</span>
+                                    <span>{{this.data.tempoCost}}</span>
+                                </section>
+                                <section class="cardDetailSection hideCardDetail">
+                                    <section class="cardTraitsSection">
+                                        <span>{{this.data.traits}}</span>
+                                    </section>
+                                    <section class="cardBodySection">
+                                        <pre>{{this.data.description}}</pre>
+                                        {{#unless (eq this.data.outcomes.GE null)}}
+                                            <section class="cardOutcomesSection">
+                                                <span>{{this.data.outcomes.ME}}</span>
+                                                <span>{{this.data.outcomes.GE}}</span>
+                                                <span>{{this.data.outcomes.SE}}</span>
+                                                <span>{{this.data.outcomes.LE}}</span>
+                                                <span>{{this.data.outcomes.NE}}</span>
+                                            </section>
+                                        {{/unless}}
+                                        {{#unless (eq this.data.keyword "")}}
+                                            <span>{{this.data.keyword}}</span>
+                                        {{/unless}}
+                                    </section>
+                                </section>
+                            </section>
+                            <section data-id={{this._id}} class="combatDeckCardControlsSection">
+                                    <p class="combatDeckCardLocation">{{this.data.currentLocation}}</p>
+                                {{#unless (eq this.data.currentLocation "hand")}}
+                                    <input type="button" class="combatDeckSeekButton" value="Seek">
+                                {{/unless}}
+                            </section>
+                        </section>
+                    {{/if}}
+                {{/each}}
+            </section>
+        </section>
+
+        {{!-- Hand Tab --}}
+        <section class="tab description" data-group="primary" data-tab="hand">
+            <section class="skillsAndHandSection">
+                <section class="sideSection">
+                    <ul class="skillSection">
+                        <h2>Skills</h2>
+                        <li class="individualSkillSection" data-action>
+                            <label class="skillRoll">Acrobatics</label>
+                            <input name='data.skills.acrobatics.value' type="number"    value="{{systemData.skills.acrobatics.value}}">
+                            <input name="data.skills.acrobatics.dc" type="number" value="{{systemData.skills.acrobatics.dc}}">
+                        </li>
+                        <li class="individualSkillSection">
+                            <label class="skillRoll">Athletics</label>
+                            <input name='data.skills.athletics.value' type="number"     value="{{systemData.skills.athletics.value}}">
+                            <input name="data.skills.athletics.dc" type="number" value="{{systemData.skills.athletics.dc}}">
+                        </li>
+                        <li class="individualSkillSection">
+                            <label class="skillRoll">Augmenting</label>
+                            <input name='data.skills.augmenting.value' type="number"     value="{{systemData.skills.augmenting.value}}">
+                            <input name="data.skills.augmenting.dc" type="number" value="{{systemData.skills.augmenting.dc}}">
+                        </li>
+                        <li class="individualSkillSection">
+                            <label class="skillRoll">Coercion</label>
+                            <input name='data.skills.coercion.value' type="number"  value="{{systemData.skills.coercion.value}}">
+                            <input name="data.skills.coercion.dc" type="number" value="{{systemData.skills.coercion.dc}}">
+                        </li>
+                        <li class="individualSkillSection">
+                            <label class="skillRoll">Controlling</label>
+                            <input name='data.skills.controlling.value' type="number"  value="{{systemData.skills.controlling.value}}">
+                            <input name="data.skills.controlling.dc" type="number" value="{{systemData.skills.controlling.dc}}">
+                        </li>
+                        <li class="individualSkillSection" data-action>
+                            <label class="skillRoll">Culture</label>
+                            <input name='data.skills.culture.value' type="number"    value="{{systemData.skills.culture.value}}">
+                            <input name="data.skills.culture.dc" type="number" value="{{systemData.skills.culture.dc}}">
+                        </li>
+                        <li class="individualSkillSection">
+                            <label class="skillRoll">Diplomacy</label>
+                            <input name='data.skills.diplomacy.value' type="number"     value="{{systemData.skills.diplomacy.value}}">
+                            <input name="data.skills.diplomacy.dc" type="number" value="{{systemData.skills.diplomacy.dc}}">
+                        </li>
+                        <li class="individualSkillSection">
+                            <label class="skillRoll">Engineering</label>
+                            <input name='data.skills.engineering.value' type="number"     value="{{systemData.skills.engineering.value}}">
+                            <input name="data.skills.engineering.dc" type="number" value="{{systemData.skills.engineering.dc}}">
+                        </li>
+                        <li class="individualSkillSection">
+                            <label class="skillRoll">Finesse</label>
+                            <input name='data.skills.finesse.value' type="number"   value="{{systemData.skills.finesse.value}}">
+                            <input name="data.skills.finesse.dc" type="number" value="{{systemData.skills.finesse.dc}}">
+                        </li>
+                        <li class="individualSkillSection">
+                            <label class="skillRoll">Force</label>
+                            <input name='data.skills.force.value' type="number" value="{{systemData.skills.force.value}}">
+                            <input name="data.skills.force.dc" type="number" value="{{systemData.skills.force.dc}}">
+                        </li>
+                        <li class="individualSkillSection">
+                            <label class="skillRoll">Intuition</label>
+                            <input name='data.skills.intuition.value' type="number"     value="{{systemData.skills.intuition.value}}">
+                            <input name="data.skills.intuition.dc" type="number" value="{{systemData.skills.intuition.dc}}">
+                        </li>
+                        <li class="individualSkillSection">
+                            <label class="skillRoll">Invoking</label>
+                            <input name='data.skills.invoking.value' type="number"     value="{{systemData.skills.invoking.value}}">
+                            <input name="data.skills.invoking.dc" type="number" value="{{systemData.skills.invoking.dc}}">
+                        </li>
+                        <li class="individualSkillSection">
+                            <label class="skillRoll">Operating</label>
+                            <input name='data.skills.operating.value' type="number"     value="{{systemData.skills.operating.value}}">
+                            <input name="data.skills.operating.dc" type="number" value="{{systemData.skills.operating.dc}}">
+                        </li>
+                        <li class="individualSkillSection">
+                            <label class="skillRoll">Perception</label>
+                            <input name='data.skills.perception.value' type="number"    value="{{systemData.skills.perception.value}}">
+                            <input name="data.skills.perception.dc" type="number" value="{{systemData.skills.perception.dc}}">
+                        </li>
+                        <li class="individualSkillSection" data-action>
+                            <label class="skillRoll">Piloting</label>
+                            <input name='data.skills.piloting.value' type="number"    value="{{systemData.skills.piloting.value}}">
+                            <input name="data.skills.piloting.dc" type="number" value="{{systemData.skills.piloting.dc}}">
+                        </li>
+                        <li class="individualSkillSection">
+                            <label class="skillRoll">Programming</label>
+                            <input name='data.skills.programming.value' type="number"   value="{{systemData.skills.programming.value}}">
+                            <input name="data.skills.programming.dc" type="number" value="{{systemData.skills.programming.dc}}">
+                        </li>
+                        <li class="individualSkillSection">
+                            <label class="skillRoll">Sensing</label>
+                            <input name='data.skills.sensing.value' type="number"   value="{{systemData.skills.sensing.value}}">
+                            <input name="data.skills.sensing.dc" type="number" value="{{systemData.skills.sensing.dc}}">
+                        </li>
+                        <li class="individualSkillSection">
+                            <label class="skillRoll">Stealth</label>
+                            <input name='data.skills.stealth.value' type="number"   value="{{systemData.skills.stealth.value}}">
+                            <input name="data.skills.stealth.dc" type="number" value="{{systemData.skills.stealth.dc}}">
+                        </li>
+                    </ul>
+                    <ul class="handWeaponsSection">
+                        <h2>Weapons</h2>
+                        {{#each items}}
+                            {{#if (eq this.type "weapon")}}
+                                <section class="handIndividualWeaponsSection">
+                                    <span>{{this.data.name}}</span>
+                                    <span>{{this.data.classification}}</span>
+                                    <span>{{this.data.range}} ({{this.data.idealRange}});</span>
+                                    <span>{{this.data.handedness}};</span>
+                                    <span>Load: {{this.data.load}};</span>
+                                    <span>{{this.data.properties}}</span>
+                                    <section data-id={{this._id}} class="weaponConditionsSection">
+                                        <section class="toggleEquipButton equippedSection">
+                                            {{#if (eq this.data.conditions.equipped "equipped")}}
+                                                <p class="equippedWeapon">Equipped</p>
+                                            {{/if}}
+                                            {{#if (eq this.data.conditions.equipped "unequipped")}}
+                                                <p class="toggleEquipButton unequippedWeapon">Unequipped</p>
+                                            {{/if}}
+                                        </section>
+                                        <section class="disarmedSection">
+                                            <span>Disarmed {{this.data.conditions.disarmed}}</span>
+                                            <span class="increaseDisarmed">+1</span>
+                                            <span class="decreaseDisarmed">-1</span>
+                                        </section>
+                                    </section>
+                                </section>
+                            {{/if}}
+                        {{/each}}
+                    </ul>
+                </section>
+                
+                <section class="handSection">
+                    <h2>Hand</h2>
+                    <section class="handControlsSection">
+                        <input type="button" class="drawCardButton" value="Draw 1 Card">
+                        <input type="button" class="drawTwoCardsButton" value="Draw 2 Cards">
+                        <input type="button" class="drawThreeCardsButton" value="Draw 3 Cards">
+                        <input type="button" class="resetDeckButton" value="Reset Deck">
+                    </section>
+                    <section class="handCardSection">
+                        {{#each items}}
+                            {{#if (eq this.data.currentLocation "hand")}}
+                                <section class="handIndividualCardSection">
+                                    <section class="handCardContentSection">
+                                        <section class="cardNameSection">
+                                            <span>{{this.name}}</span>
+                                            <span>{{this.data.tempoCost}}</span>
+                                        </section>
+                                        <section class="cardDetailSection hideCardDetail">
+                                            <section class="cardTraitsSection">
+                                                <span>{{this.data.traits}}</span>
+                                            </section>
+                                            <section class="cardBodySection">
+                                                <pre>{{this.data.description}}</pre>
+                                                {{#unless (eq this.data.outcomes.GE null)}}
+                                                    <section class="cardOutcomesSection">
+                                                        <span>{{this.data.outcomes.ME}}</span>
+                                                        <span>{{this.data.outcomes.GE}}</span>
+                                                        <span>{{this.data.outcomes.SE}}</span>
+                                                        <span>{{this.data.outcomes.LE}}</span>
+                                                        <span>{{this.data.outcomes.NE}}</span>
+                                                    </section>
+                                                {{/unless}}
+                                                {{#unless (eq this.data.keyword "")}}
+                                                    <span>{{this.data.keyword}}</span>
+                                                {{/unless}}
+                                            </section>
+                                        </section>
+                                    </section>
+                                    <section data-id={{this._id}} class="handCardControlsSection">
+                                        <input type="button" class="handPlayCardButton" value="Play">
+                                        <input type="button" class="handDiscardCardButton" value="Discard">
+                                    </section>
+                                </section>
+                            {{/if}}
+                        {{/each}}
+                    </section>
+                    <h2 class="handSubsequentHeading">Global Actions</h2>
+                    <section class="globalCardSection">
+                        {{#each items}}
+                            {{#if (eq this.type "globalAction")}}
+                                <section class="handIndividualCardSection">
+                                    <section class="handCardContentSection">
+                                        <section class="cardNameSection">
+                                            <span>{{this.name}}</span>
+                                            <span>{{this.data.tempoCost}}</span>
+                                        </section>
+                                        <section class="cardDetailSection hideCardDetail">
+                                            <section class="cardTraitsSection">
+                                                <span>{{this.data.traits}}</span>
+                                            </section>
+                                            <section class="cardBodySection">
+                                                <pre>{{this.data.description}}</pre>
+                                                {{#unless (eq this.data.outcomes.GE null)}}
+                                                    <section class="cardOutcomesSection">
+                                                        <span>{{this.data.outcomes.ME}}</span>
+                                                        <span>{{this.data.outcomes.GE}}</span>
+                                                        <span>{{this.data.outcomes.SE}}</span>
+                                                        <span>{{this.data.outcomes.LE}}</span>
+                                                        <span>{{this.data.outcomes.NE}}</span>
+                                                    </section>
+                                                {{/unless}}
+                                            </section>
+                                        </section>
+                                    </section>
+                                    <section data-id={{this._id}} class="handCardControlsSection">
+                                        <input type="button" class="handPlayCardButton" value="Play">
+                                        {{#if (eq ../systemData.lockOrUnlock 'Unlocked')}}
+                                            <input type="button" class="globalActionDeleteCardButton deleteButton" value="Delete">
+                                        {{/if}}
+                                    </section>
+                                </section>
+                            {{/if}}
+                        {{/each}}
+                    </section>
+                    <h2 class="handSubsequentHeading">Features</h2>
+                    <section class="featureCardSection">
+                        {{#each items}}
+                            {{#if (eq this.type "feature")}}
+                                <section class="handIndividualCardSection">
+                                    <section class="handCardContentSection">
+                                        <section class="cardNameSection">
+                                            <span>{{this.name}}</span>
+                                            <span>{{this.data.tempoCost}}</span>
+                                        </section>
+                                        <section class="cardDetailSection hideCardDetail">
+                                            <section class="cardTraitsSection">
+                                                <span>{{this.data.traits}}</span>
+                                            </section>
+                                            <section class="cardBodySection">
+                                                <pre>{{this.data.description}}</pre>
+                                                {{#unless (eq this.data.outcomes.GE null)}}
+                                                    <section class="cardOutcomesSection">
+                                                        <span>{{this.data.outcomes.ME}}</span>
+                                                        <span>{{this.data.outcomes.GE}}</span>
+                                                        <span>{{this.data.outcomes.SE}}</span>
+                                                        <span>{{this.data.outcomes.LE}}</span>
+                                                        <span>{{this.data.outcomes.NE}}</span>
+                                                    </section>
+                                                {{/unless}}
+                                            </section>
+                                        </section>
+                                    </section>
+                                    <section data-id={{this._id}} class="handCardControlsSection">
+                                        <input type="button" class="handPlayCardButton" value="Play">
+                                        {{#if (eq ../systemData.lockOrUnlock 'Unlocked')}}
+                                            <input type="button" class="globalActionDeleteCardButton deleteButton" value="Delete">
+                                        {{/if}}
+                                    </section>
+                                </section>
+                            {{/if}}
+                        {{/each}}
+                    </section>
+                </section>
+                
+            </section>
+        </section>
+    </section>
+</form>
