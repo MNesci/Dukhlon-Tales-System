@@ -69,76 +69,58 @@
       },
       "skills": {
         "acrobatics": {
-          "value": 2,
-          "dc": 6
+          "value": 2
         },
         "athletics": {
-          "value": 2,
-          "dc": 6
+          "value": 2
         },
         "augmenting": {
-          "value": 2,
-          "dc": 6
+          "value": 2
         },
         "coercion": {
-          "value": 2,
-          "dc": 6
+          "value": 2
         },
         "controlling": {
-          "value": 2,
-          "dc": 6
+          "value": 2
         },
         "culture": {
-          "value": 2,
-          "dc": 6
+          "value": 2
         },
         "diplomacy": {
-          "value": 2,
-          "dc": 6
+          "value": 2
         },
         "engineering": {
-          "value": 2,
-          "dc": 6
+          "value": 2
         },
         "finesse": {
-          "value": 2,
-          "dc": 6
+          "value": 2
         },
         "force": {
-          "value": 2,
-          "dc": 6
+          "value": 2
         },
         "intuition": {
-          "value": 2,
-          "dc": 6
+          "value": 2
         },
         "invoking": {
-          "value": 2,
-          "dc": 6
+          "value": 2
         },
         "operating": {
-          "value": 2,
-          "dc": 6
+          "value": 2
         },
         "perception": {
-          "value": 2,
-          "dc": 6
+          "value": 2
         },
         "piloting": {
-          "value": 2,
-          "dc": 6
+          "value": 2
         },
         "programming": {
-          "value": 2,
-          "dc": 6
+          "value": 2
         },
         "sensing": {
-          "value": 2,
-          "dc": 6
+          "value": 2
         },
         "stealth": {
-          "value": 2,
-          "dc": 6
+          "value": 2
         }
       },
       "equipment": {

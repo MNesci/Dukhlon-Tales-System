@@ -207,10 +207,10 @@ class DukhlonActorSheet extends ActorSheet {
         for (let i = 0; i < skills.length; i++) {
             let skill = skills[i];
             let skillChildren = skill.children;
-            console.log(skillChildren);
             let skillValue = skillChildren[1].value;
-            skillChildren[2].value = skillValue * 3;
-            console.log(skillChildren);
+            let skillDC = skillValue * 3;
+            skillChildren[2].value = skillDC;
+
         }
     };
 
