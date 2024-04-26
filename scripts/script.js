@@ -173,6 +173,8 @@ class DukhlonActorSheet extends ActorSheet {
             };
         };
         let currentLoad = arrayOfLoads.reduce((total, load) => Number(load) + total, 0);
+        let loadNumberTextBox = html._element[0].querySelector('.loadNumber');
+        loadNumberTextBox.innerText = currentLoad;
         let loadObject = {
             0: 'None',
             1: 'Small',
@@ -196,6 +198,20 @@ class DukhlonActorSheet extends ActorSheet {
                 sheetForms[key].innerText = displayedLoad;
             };
         };
+    };
+
+    // set up to be called on render
+    calculateSkillDCs(html) {
+        let sheet = html._element[0];
+        let skills = sheet.querySelectorAll('.individualSkillSection');
+        for (let i = 0; i < skills.length; i++) {
+            let skill = skills[i];
+            let skillChildren = skill.children;
+            console.log(skillChildren);
+            let skillValue = skillChildren[1].value;
+            skillChildren[2].value = skillValue * 3;
+            console.log(skillChildren);
+        }
     };
 
     // set up to be called by Activate Listeners
@@ -864,6 +880,7 @@ Hooks.on('init', () => xSetBox.instantiate());
 
 Hooks.on('renderDukhlonActorSheet', (html) => {
     DukhlonActorSheet.instance.calculateCurrentLoad(html);
+    DukhlonActorSheet.instance.calculateSkillDCs(html);
 });
 
 
